@@ -6,9 +6,14 @@ pipeline {
         }
     }
     stages {
-        stage('Build') { 
+        stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package' 
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'echo 'uploading artifacts to somewhere''
             }
         }
     }
