@@ -16,4 +16,5 @@ public class TestAppForJenkinsApplication {
     public String greetigs() {
         return "Hello, it works. That's all.";
     }
+
 }
