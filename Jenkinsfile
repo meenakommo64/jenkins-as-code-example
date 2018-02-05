@@ -6,6 +6,13 @@ pipeline {
         }
     }
     stages {
+        stage('Prepare') {
+            steps {
+                sh '''VERSION-QUALIFIER=1.0
+                NEW_VERSION={version-qualifier}.$(date +%Y%m%d%H%M%S)
+                echo $NEW_VERSION'''
+            }
+        }
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package' 
@@ -13,7 +20,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                sh 'echo 'uploading artifacts to somewhere''
+                sh 'echo \'uploading artifacts to some repositories\''
             }
         }
     }
