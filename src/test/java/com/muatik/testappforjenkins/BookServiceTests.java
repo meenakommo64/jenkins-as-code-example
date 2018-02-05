@@ -13,6 +13,6 @@ public class BookServiceTests {
     @Test
     public void costCalculatedCorrectly() {
         BookService bookService = new BookServiceBean();
-        Assert.assertEquals(22, bookService.calculateCost(100), 0.001);
+        Assert.assertEquals(32, bookService.calculateCost(100), 0.001);
     }
 }
