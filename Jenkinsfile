@@ -8,8 +8,8 @@ pipeline {
     stages {
         stage('Prepare') {
             steps {
-                sh '''VERSION-QUALIFIER=1.0
-                NEW_VERSION={version-qualifier}.$(date +%Y%m%d%H%M%S)
+                sh '''export VERSION_QUALIFIER=1.0
+                export NEW_VERSION=$VERSION_QUALIFIER.$(date +%Y%m%d%H%M%S)\\
                 echo $NEW_VERSION'''
             }
         }
