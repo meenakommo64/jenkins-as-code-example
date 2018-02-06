@@ -6,13 +6,6 @@ pipeline {
         }
     }
     stages {
-        stage('Prepare') {
-            steps {
-                sh '''export VERSION_QUALIFIER=1.0
-                export NEW_VERSION=$VERSION_QUALIFIER.$(date +%Y%m%d%H%M%S)\\
-                echo $NEW_VERSION'''
-            }
-        }
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package' 
